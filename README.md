@@ -14,3 +14,5 @@ This will tell the health check to connect to your ADFS server's IP address with
 using SNI to indicate the proper hostname.
 
 If using a web application proxy to connect to ADFS, you will want to make sure that your non primary ADFS server is set as "backup" in the config. This is because the Web Application Proxy's will only sync through the primnary ADFS. If you are load balancing, you will have intermittent configuration loading errors on the web application proxys. With this config, your WAP's will stay synchronized, but in the event your primary ADFS server reboots or goes offline the secondary one will pick up right away and then fail back to the primary once it becomes available again.
+
+Health checks are possible using whichever domain name you choose as long as you connect unsecured via port 80.
